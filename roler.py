@@ -24,7 +24,7 @@ def create_at_path(path):
 @click.command()
 @click.argument('name')
 def create_role(name):
-    """ Simple tool that creates an ansible role with the
+    """ A simple tool that creates an ansible role with the
         reccomended directory layout """
     roles_dir = [member for member in listdir('.')
                  if isdir(member) and member == 'roles']
