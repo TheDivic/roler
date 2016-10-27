@@ -1,6 +1,6 @@
 import click
 from os import listdir, makedirs
-from os.path import isdir, join, exists
+from os.path import isdir, join, exists, abspath
 from click import ClickException
 
 
@@ -19,6 +19,9 @@ def create_at_path(path):
     open(join(path, 'defaults', 'main.yml'), 'a').close()
     open(join(path, 'meta', 'main.yml'), 'a').close()
     open(join(path, 'tasks', 'main.yml'), 'a').close()
+
+    # Output created role path
+    print("Created role: %s" % abspath(path))
 
 
 @click.command()
